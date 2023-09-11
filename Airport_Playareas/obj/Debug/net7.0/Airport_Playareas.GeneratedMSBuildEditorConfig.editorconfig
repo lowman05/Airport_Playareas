@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\danrf\OneDrive\Desktop\repos\Airport_Playareas\Airport_Playareas
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Airport/AddAirport.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlycG9ydFxBZGRBaXJwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Airport/AirportView.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlycG9ydFxBaXJwb3J0Vmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Airport/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlycG9ydFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Airport/UpdateLactationArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlycG9ydFxVcGRhdGVMYWN0YXRpb25BcmVhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Airport/UpdatePlayArea.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWlycG9ydFxVcGRhdGVQbGF5QXJlYS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -24,8 +44,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/PlayAreaList.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxheUFyZWFMaXN0LmNzaHRtbA==
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Review/AddReview.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEFkZFJldmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Review/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/danrf/OneDrive/Desktop/repos/Airport_Playareas/Airport_Playareas/Views/Shared/Error.cshtml]

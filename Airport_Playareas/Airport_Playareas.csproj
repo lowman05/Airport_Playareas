@@ -7,12 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Dapper" Version="2.0.143" />
+    <PackageReference Include="Dapper" Version="2.0.151" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.10" />
     <PackageReference Include="MySql.Data" Version="8.1.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Update="Views\PlayAreaList.cshtml">
+    <Content Update="Views\Airport\Index.cshtml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Update="Views\Home\Index.cshtml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

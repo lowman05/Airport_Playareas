@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Airport>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $('.sortable').on('click', function () {
+            var table = $('#myTable');
+            var rows = table.find('tbody > tr').toArray().sort(compareNames);
+            var dir = $(this).data('dir');
+
+            if (dir === 'asc') {
+                rows.reverse();
+                $(this).data('dir', 'desc');
+            } else {
+                $(this).data('dir', 'asc');
+            }
+
+            $.each(rows, function (index, row) {
+                table.children('tbody').append(row);
+            });
+        });
+
+        function compareNames(a, b) {
+            var airportNameA = $(a).find('td:eq(0)').text().toLowerCase();
+            var airportNameB = $(b).find('td:eq(0)').text().toLowerCase();
+
+            return airportNameA.localeCompare(airportNameB);
+        }
+    });
+</script>
+
+<table class="table" id="myTable">
+   <thead>
+        <tr>
+        <th class="sortable" data-dir="asc">Sort Airports By Name</th>
+        <th>IATA Code</th>
+        <th>State</th>
+        <th>Country</th>
+        <th>Website</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var airport in @Model)
+        {
+            <tr>           
+            <td><a asp-controller="Airport" asp-action="AirportView" asp-route-airportId="@airport.AirportID" class="btn btn-outline-primary custom-btn">@airport.AirportName</a></td>
+            <td>@airport.AirportCode</td>
+            <td>@airport.State</td>
+            <td>@airport.Country</td>
+            <td><button type="button" onclick="window.open('@airport.Website','_blank')" class="btn btn-outline-primary custom-btn">Visit Airport Website</button></td>
+            </tr>
+        }
+    </tbody>
+</table>

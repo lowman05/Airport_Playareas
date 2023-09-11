@@ -1,0 +1,41 @@
+﻿@model Review
+<body class="background">
+</body>
+
+<h2>Let Others Know How Kid Friendly An Airport Is</h2>
+<br />
+@using (Html.BeginForm("AddReviewToDatabase", "Review", "Post"))
+{
+    <div class="form-group">
+        <label for="">Select An Airport</label>
+        <select class="form-control" name="AirportID" value="">
+            @foreach (var airport in Model.Airports.OrderBy(airport => airport.AirportName))
+            {
+                <option value="@airport.AirportID">@airport.AirportName</option>
+            }
+        </select>
+
+    </div>
+    <br />
+    <input asp-for="ReviewID" type="hidden" value="" />
+
+    <label asp-for="Reviewer" class="control-label">Name</label>
+    <input type="text" name="Reviewer" class="form-control" value="" />
+    <br />
+    <div>
+        <label asp-for="Rating" class="control-label">Rate From 0-5 Planes</label>
+        <span class="rating">
+            <input type="number" step="1" min="0" max="5" name="Rating" class="form-control" />
+            <i class="fas fa-plane"></i>
+        </span>
+    </div>
+    <br />
+
+    <label asp-for="Comments" class="control-label">Leave Feedback For This Airport</label>
+    <input type="text" name="Comments" class="form-control" />
+    <br />
+    <label asp-for="Date" class="control-label">Enter Today's Date</label>
+    <input type="date" name="Date" class="form-control" />
+    <br />
+    <input type="submit" value="Create Review" class="btn btn-outline-primary custom-btn" />
+}

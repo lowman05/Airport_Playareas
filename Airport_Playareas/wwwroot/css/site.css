@@ -20,3 +20,47 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+th.sortable {
+    cursor: pointer;
+    user-select:none;
+}
+h2{
+    text-align:center;
+}
+h3 {
+    text-align:center;
+}
+.playarea-details{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    text-align:center;
+}
+.playarea-photo {    
+    max-width: 100%;
+    height: auto;
+    border: groove;   
+    border-width: thick;
+    
+}
+.rating {
+    position: relative;
+    display: inline-block;
+}
+
+    .rating i {
+        position: absolute;
+        top: 50%;
+        right: 30px;
+        color: #4a7729;
+        transform: translateY(-50%);
+    }
+
+.plane {
+    color: #4a7729;
+}
+
+.gray-plane {
+    color: black;
+}

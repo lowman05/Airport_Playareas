@@ -1,0 +1,19 @@
+﻿@model LactationArea
+
+<h2>Update This Airport's Nursing or Lactation Facilities</h2>
+
+@using (Html.BeginForm("UpdateLactationAreaToDatabase","LactationArea", "Post"))
+{
+    <input asp-for="LactationAreaID" type="hidden" value="@Model.LactationAreaID"/>
+
+    <label asp-for="Terminal" class="control-label">Terminal</label>
+    <input type="text" name ="Terminal" class="form-control" value="@Model.Terminal"/>
+
+    <label asp-for="Gate" class="control-label">Gate/Location</label>
+    <input type="text" name="Gate" class="form-control" value="@Model.Gate" />
+
+    <label asp-for="Description" class="control-label">Description</label>
+    <input type="text" name="Description" class="form-control" value="@Model.Description" />
+
+    <input type="submit" value="Update" class="btn btn-primary custom-btn"/>
+}

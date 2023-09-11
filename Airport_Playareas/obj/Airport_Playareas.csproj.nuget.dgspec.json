@@ -42,7 +42,11 @@
           "dependencies": {
             "Dapper": {
               "target": "Package",
-              "version": "[2.0.143, )"
+              "version": "[2.0.151, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.10, )"
             },
             "MySql.Data": {
               "target": "Package",
@@ -68,7 +72,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.203\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -14,8 +14,10 @@ builder.Services.AddScoped<IDbConnection>((s) =>
     return conn;
 });
 
-builder.Services.AddTransient<IPlayAreasRepository, PlayAreasRepository>();
-
+builder.Services.AddTransient<IAirportRepository, AirportRepository>();
+builder.Services.AddTransient<ILactationAreaRepository, LactationAreaRepository>();
+builder.Services.AddTransient<IPlayAreaRepository, PlayAreaRepository>();
+builder.Services.AddTransient<IReviewRepository, ReviewRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -36,5 +38,12 @@ app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
-
+app.MapControllerRoute(
+    name: "airportview",
+    pattern: "Airport/AirportView/{airportId}",
+    defaults: new { controller = "Airport", action = "AirportView" });
+app.MapControllerRoute(
+    name: "airport",
+    pattern: "Airport/{action}/{id}",
+    defaults: new { controller = "Airport" });
 app.Run();

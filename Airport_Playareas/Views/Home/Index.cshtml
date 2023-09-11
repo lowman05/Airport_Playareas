@@ -1,8 +1,62 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
-}
+﻿ @model             IEnumerable<Airport>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+@{
+    ViewData["Title"] = "Home Page";
+   
+}
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
+
+@*<div class="form-group">
+    @Html.DropDownListFor(model => model.FirstOrDefault().AirportID, new SelectList(Model, "AirportID", "AirportName"), "Select an airport", new { @class = "form-control", id = "airportDropdown" })
+</div>*@
+
+@using (Html.BeginForm("AirportView", "Airport", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.DropDownListFor(model => model.FirstOrDefault().AirportID, new SelectList(Model.OrderBy(airport => airport.AirportName), "AirportID", "AirportName"), "Select an airport", new { @class = "form-control", id="airportDropdown" })
+    </div>
+   <br />
+        <button type="submit" class="btn btn-outline-primary custom-btn" style="float:right">Select Airport</button>
+}
+
+<div style="display:block">
+    <a href = "@Url.Action("AddAirport", "Airport")" class="btn btn-outline-primary custom-btn ">Add An Airport</a>
+</div>
+
+
+@*<div class="form-group">
+    <select id="airportDropdown" class="form-control">
+        <option value="">Select an airport</option>
+        @foreach (var airport in Model)
+        {
+            <option value="@airport.AirportID">@airport.AirportName</option>
+        }
+    </select>
+</div>*@
+
+
+
+
+@*<script>
+    document.getElementById("airportDropdown").addEventListener("change", function () {
+        var selectedAirportId = this.value;
+        if (selectedAirportId) {
+            window.location.href = "/Airport/AirportView/" + selectedAirportId;
+        }
+    });
+</script>*@
+
+
+
+
+
+
+
+
+
+

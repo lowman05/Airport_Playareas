@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Review>
+
+<body class="background">
+</body>
+<h2>Airport Reviews</h2>
+<br />
+<div style="display:block">
+    <a href="/Review/AddReview/" class="btn btn-outline-primary custom-btn ">Review An Airport</a>
+</div>
+
+<br />
+
+
+<table class="table">
+    <tr>
+        @*<th>Review ID</th>
+        <th>Park ID</th>*@
+        <th>Airport Name</th>
+        <th>Name</th>
+        <th>Rating</th>
+        <th>Comments</th>
+        <th>Date</th>
+    </tr>
+    @foreach (var review in @Model)
+    {
+        <tr>
+            @*<td>@review.ReviewID</td>
+        <td>@review.ParkID</td>*@
+            <td>@review.AirportName</td>
+            <td>@review.Reviewer</td>
+            <td>
+                @for (int i = 1; i <= 5; i++)
+                {
+                    <i class="@(i <= review.Rating ? "plane" : "gray-plane") fas fa-plane"></i>
+                }
+            </td>
+
+            <td>@review.Comments</td>
+            <td>@review.Date.ToString("MM-dd-yyyy")</td>
+        </tr>
+
+    }
+</table>

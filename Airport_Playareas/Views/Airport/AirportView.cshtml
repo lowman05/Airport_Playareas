@@ -1,0 +1,101 @@
+﻿
+@model AirportDetailsViewModel
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script>
+
+    $(document).ready(function () {
+        $('.sortable').on('click', function () {
+            var table = $(this).closest('table');
+            var rows = table.find('tbody > tr').toArray().sort(compareNames);
+            var dir = $(this).data('dir');
+
+            if (dir === 'asc') {
+                rows.reverse();
+                $(this).data('dir', 'desc');
+            } else {
+                $(this).data('dir', 'asc');
+            }
+
+            $.each(rows, function (index, row) {
+                table.children('tbody').append(row);
+            });
+        });
+
+        function compareNames(a, b) {
+            var terminalNameA = $(a).find('td:eq(0)').text().toLowerCase();
+            var terminalNameB = $(b).find('td:eq(0)').text().toLowerCase();
+
+            return terminalNameA.localeCompare(terminalNameB);
+        }
+    });
+
+   
+</script>
+
+<div>
+<h2>@Model.Airport.AirportName</h2>
+<button type="button" onclick="window.open('@Model.Airport.Website','_blank')" class="btn btn-outline-primary custom-btn">Visit Airport Website</button>
+</div>
+<br />
+
+<h3>Lactation Areas:</h3>
+<br />
+@*<ul>
+    @foreach (var lactationArea in Model.LactationAreas)
+    {
+        <li>@lactationArea.Terminal</li>
+        <li>@lactationArea.Gate</li>
+        <li>@lactationArea.Description</li>
+    }
+</ul>*@
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th class="sortable" data-dir="asc">Sort By Terminal</th>
+            <th>Gate/Location</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        
+        @foreach (var lactationArea in Model.LactationAreas)
+        {
+            <tr>
+            <td>@(lactationArea.Terminal ?? "None Provided")</td>
+            <td>@(lactationArea.Gate ?? "None Provided")</td>
+            <td>@(lactationArea.Description ?? "None Provided")</td>
+            </tr>
+           
+        }
+        
+    </tbody>
+</table>
+
+
+<br />
+<h3>Children's Play Areas:</h3>
+<br />
+
+<table class="table" id="myTable">
+    <thead>
+        <tr>
+            <th class = "sortable" data-dir="asc">Sort By Terminal</th>
+            <th>Gate/Location</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var playArea in Model.PlayAreas)
+        {
+            <tr>
+                <td>@(playArea.Terminal ?? "None Provided")</td>
+                <td>@(playArea.Gate ?? "None Provided")</td>
+                <td>@(playArea.Description ?? "None Provided")</td>
+            </tr>
+        }
+    </tbody>
+</table>
