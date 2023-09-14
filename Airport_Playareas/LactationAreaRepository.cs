@@ -2,14 +2,15 @@
 using Dapper;
 using System.Data;
 
+
 namespace Airport_Playareas
 {
     public class LactationAreaRepository : ILactationAreaRepository
     {
-        private readonly IDbConnection _conn;   
+        private readonly IDbConnection _conn;
 
 
-        public LactationAreaRepository (IDbConnection conn)
+        public LactationAreaRepository(IDbConnection conn)
         {
             _conn = conn;
         }

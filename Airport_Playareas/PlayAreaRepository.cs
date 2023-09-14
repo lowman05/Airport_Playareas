@@ -33,7 +33,7 @@ namespace Airport_Playareas
         public void InsertPlayArea(PlayArea playAreaToInsert)
         {
             _conn.Execute("INSERT INTO playareas (AIRPORTID, TERMINAL, GATE, DESCRIPTION, PHOTOURL) VALUES (@airportid, @terminal, @gate, @description, @photourl);",
-                new {airportid=playAreaToInsert.AirportID,terminal = playAreaToInsert.Terminal, gate = playAreaToInsert.Gate, description = playAreaToInsert.Description, photourl=playAreaToInsert.PhotoURL,});
+                new { airportid = playAreaToInsert.AirportID, terminal = playAreaToInsert.Terminal, gate = playAreaToInsert.Gate, description = playAreaToInsert.Description, photourl = playAreaToInsert.PhotoURL, });
         }
     }
 }

@@ -1,0 +1,125 @@
+﻿@model Airport_Playareas.Models.Airport
+
+<body class="background">
+</body>
+<h2>Add an Airport</h2>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+
+@* <script>
+    $("#addLactationArea").click(function () {
+        var newLactationArea = $(".lactation-area:first").clone();
+        $("#lactationAreas").append(newLactationArea);
+    });
+
+    $("#addPlayArea").click(function () {
+        var newPlayArea = $(".play-area:first").clone();
+        $("#playAreas").append(newPlayArea);
+    });
+
+
+</script> *@
+
+@using (Html.BeginForm("AddAirportToDatabase", "Airport", FormMethod.Post))
+{
+    <div class="form-group">
+        <label asp-for="AirportName" class="control-label">Name of Airport</label>
+        <input type="text" asp-for="AirportName" class="form-control" />
+        <span asp-validation-for="AirportName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AirportCode" class="control-label">Three Letter Airport Identifier</label>
+        <input type="text" asp-for="AirportCode" class="form-control" />
+        <span asp-validation-for="AirportCode" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="State" class="control-label">State</label>
+        <input type="text" asp-for="State" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Website" class="control-label">Airport Website</label>
+        <input type="text" asp-for="Website" class="form-control" />
+    </div>
+
+     <div class="form-group">
+        <label for="LactationAreas">Lactation Areas:</label>
+        <div id="lactationAreasContainer">
+            <div class="lactation-area">
+                
+                <input type="text" class="form-control" name="LactationTerminal" placeholder="Terminal" />
+                <input type="text" class="form-control" name="LactationGate" placeholder="Gate" />
+                <input type="text" class="form-control" name="LactationDescription" placeholder="Description" />
+                <button type="button" class="btn btn-danger remove-lactation">Remove</button>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="addLactationArea">Add Lactation Area</button>
+    </div>
+
+    <!-- Play Areas -->
+    <div class="form-group">
+        <label for="PlayAreas">Play Areas:</label>
+        <div id="playAreasContainer">
+            <div class="play-area">
+          
+                <input type="text" class="form-control" name="PlayTerminal" placeholder="Terminal" />
+                <input type="text" class="form-control" name="PlayGate" placeholder="Gate" />
+                <input type="text" class="form-control" name="PlayDescription" placeholder="Description" />
+                <button type="button" class="btn btn-danger remove-play">Remove</button>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" id="addPlayArea">Add Play Area</button>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create Airport</button>
+
+
+@section Scripts {
+    <script>
+        // Add Lactation Area
+        $("#addLactationArea").click(function () {
+            var lactationAreaHtml = `
+                <div class="lactation-area">
+                   
+                    <input type="text" class="form-control" name="LactationTerminal" placeholder="Terminal" />
+                    <input type="text" class="form-control" name="LactationGate" placeholder="Gate" />
+                    <input type="text" class="form-control" name="LactationDescription" placeholder="Description" />
+                    <button type="button" class="btn btn-danger remove-lactation">Remove</button>
+                </div>
+            `;
+            $("#lactationAreasContainer").append(lactationAreaHtml);
+        });
+
+        // Remove Lactation Area
+        $("#lactationAreasContainer").on("click", ".remove-lactation", function () {
+            $(this).closest(".lactation-area").remove();
+        });
+
+        // Add Play Area
+        $("#addPlayArea").click(function () {
+            var playAreaHtml = `
+                <div class="play-area">
+                   
+                    <input type="text" class="form-control" name="PlayTerminal" placeholder="Terminal" />
+                    <input type="text" class="form-control" name="PlayGate" placeholder="Gate" />
+                    <input type="text" class="form-control" name="PlayDescription" placeholder="Description" />
+                    <button type="button" class="btn btn-danger remove-play">Remove</button>
+                </div>
+            `;
+            $("#playAreasContainer").append(playAreaHtml);
+        });
+
+        // Remove Play Area
+        $("#playAreasContainer").on("click", ".remove-play", function () {
+            $(this).closest(".play-area").remove();
+        });
+    </script>
+}
+    <br />
+
+    <button type="submit" name="action" value="Submit" class="btn btn-outline-primary custom-btn">Submit</button>
+}

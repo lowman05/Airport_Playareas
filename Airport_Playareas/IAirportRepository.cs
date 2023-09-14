@@ -7,7 +7,7 @@ namespace Airport_Playareas
         public IEnumerable<Airport> GetAllAirports();
         public Airport GetAirportById(int id);
 
-        public void InsertAirport (Airport airportToInsert);
+        public void InsertAirport(Airport airportToInsert);
 
         //public Airport GetAirportByName(string airportName);
         public IEnumerable<Airport> GetAirportByName(string airportName);

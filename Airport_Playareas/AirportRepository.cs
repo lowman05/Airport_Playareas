@@ -35,8 +35,8 @@ namespace Airport_Playareas
         public void InsertAirport(Airport airportToInsert)
         {
             _conn.Execute("INSERT INTO airports(AIRPORTNAME, AIRPORTCODE, STATE, COUNTRY, WEBSITE) VALUES (@airportname, @airportcode, @state, @country, @website);",
-                new { airportname = airportToInsert.AirportName, airportcode=airportToInsert.AirportCode, state=airportToInsert.State, country=airportToInsert.Country, website=airportToInsert.Website });
+                new { airportname = airportToInsert.AirportName, airportcode = airportToInsert.AirportCode, state = airportToInsert.State, country = airportToInsert.Country, website = airportToInsert.Website });
         }
-        
+
     }
 }

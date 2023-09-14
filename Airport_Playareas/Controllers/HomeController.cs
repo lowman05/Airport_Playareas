@@ -1,6 +1,5 @@
 ﻿using Airport_Playareas.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using System.Diagnostics;
 
 namespace Airport_Playareas.Controllers
@@ -9,22 +8,22 @@ namespace Airport_Playareas.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly IAirportRepository _airportRepository;
-       
-       
+
+
 
         public HomeController(ILogger<HomeController> logger, IAirportRepository airportRepository)
         {
             _logger = logger;
-            
+
             _airportRepository = airportRepository;
-            
+
         }
-        
+
 
         public IActionResult Index()
         {
             var airports = _airportRepository.GetAllAirports();
-           return View(airports);
+            return View(airports);
         }
         public IActionResult AirportView(int airportId)
         {
@@ -33,7 +32,7 @@ namespace Airport_Playareas.Controllers
         }
 
 
-        
+
 
         public IActionResult Privacy()
         {

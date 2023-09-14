@@ -1,6 +1,4 @@
-﻿using Dapper;
-using System.Data;
-using Airport_Playareas.Models;
+﻿using Airport_Playareas.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Airport_Playareas.Controllers

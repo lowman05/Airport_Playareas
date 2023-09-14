@@ -2,6 +2,7 @@ using Airport_Playareas;
 using MySql.Data.MySqlClient;
 using System.Data;
 
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -36,9 +37,6 @@ app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllerRoute(
-    name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
-app.MapControllerRoute(
     name: "airportview",
     pattern: "Airport/AirportView/{airportId}",
     defaults: new { controller = "Airport", action = "AirportView" });
@@ -46,4 +44,7 @@ app.MapControllerRoute(
     name: "airport",
     pattern: "Airport/{action}/{id}",
     defaults: new { controller = "Airport" });
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 app.Run();
